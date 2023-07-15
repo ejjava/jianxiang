@@ -11,7 +11,10 @@
     <!-- MDUI CSS -->
     <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
-    <title>Hello, world!</title>
+    <title>简箱 - 资源网页收藏与分享</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="Description" content="简箱，一个网页与资源的分享站，致力于收集好网页与资源。" />
+    <meta name="Keywords" content="资源,工具,网页,简箱,分享" />
 </head>
 
 <body>
@@ -23,55 +26,48 @@
             </a>
             <a href="javascript:;" class="mdui-typo-title">简箱</a>
             <div class="mdui-toolbar-spacer"></div>
-            <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+            <a href="javascript:mdui.alert('正在制作中<br>','提示');" class="mdui-btn mdui-btn-icon">
                 <i class="mdui-icon material-icons">search</i>
             </a>
-            <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+            <a href="javascript:window.open('https://jianxiang.pages.dev/');" class="mdui-btn mdui-btn-icon">
                 <i class="mdui-icon material-icons">refresh</i>
             </a>
-            <a href="javascript:mdui.alert('QQ<br>914933408','联系');" class="mdui-btn mdui-btn-icon">
+            <a href="javascript:mdui.alert('QQ:914933408<br>版本:1.0.0.0','关于');" class="mdui-btn mdui-btn-icon">
             
                 <i class="mdui-icon material-icons">more_vert</i>
             </a>
         </div>
     </div>
-    <h1 style="text-decoration: underline"><a href="https://ejjava.github.io" rel="home">EJJAVA.GITHUB.IO</a></h1>
+    <h1 style="text-decoration: underline"><a href="https://ejjava.github.io" rel="home">JIANXIANG.PAGES.DEV</a></h1>
 
     <div class="mdui-drawer" id="left-drawer">
-        ... left drawer content ...
+        
         <img class="mdui-img-fluid" src="https://s1.ax1x.com/2023/07/15/pC58Cq0.png" />
         <ul class="mdui-list">
             <li class="mdui-list-item mdui-ripple">
                 <i class="mdui-list-item-icon mdui-icon material-icons">move_to_inbox</i>
-                <div class="mdui-list-item-content">Inbox</div>
+                <div onclick="window.open('https://jianxiang.pages.dev/')" class="mdui-list-item-content">首页</div>
             </li>
             <li class="mdui-list-item mdui-ripple">
                 <i class="mdui-list-item-icon mdui-icon material-icons">star</i>
-                <div class="mdui-list-item-content">Starred</div>
+                <div onclick="window.open('./web/web.html')" class="mdui-list-item-content">网络站点</div>
             </li>
             <li class="mdui-list-item mdui-ripple">
                 <i class="mdui-list-item-icon mdui-icon material-icons">send</i>
-                <div class="mdui-list-item-content">Sent mail</div>
+                <div onclick="window.open('./about.html')" class="mdui-list-item-content">应用程序</div>
             </li>
             <li class="mdui-list-item mdui-ripple">
                 <i class="mdui-list-item-icon mdui-icon material-icons">drafts</i>
-                <div class="mdui-list-item-content">Drafts</div>
+                <div onclick="window.open('./about.html')" class="mdui-list-item-content">关于我们</div>
             </li>
-            <li class="mdui-subheader">Subheader</li>
+            <li class="mdui-subheader">友情链接</li>
             <li class="mdui-list-item mdui-ripple">
                 <i class="mdui-list-item-icon mdui-icon material-icons">email</i>
-                <div class="mdui-list-item-content">All mail</div>
+                <div onclick="window.open('https://ejjava.github.io')" class="mdui-list-item-content">E简JAVA网</div>
             </li>
-            <li class="mdui-list-item mdui-ripple">
-                <i class="mdui-list-item-icon mdui-icon material-icons">delete</i>
-                <div class="mdui-list-item-content">Trash</div>
-            </li>
-            <li class="mdui-list-item mdui-ripple">
-                <i class="mdui-list-item-icon mdui-icon material-icons">error</i>
-                <div class="mdui-list-item-content">Spam</div>
-            </li>
+           
         </ul>
-        <button class="mdui-btn" mdui-drawer-close>close</button>
+      
     </div>
 
 
@@ -107,23 +103,27 @@
                 <div class="mdui-ripple">
                     <img class="mdui-img-fluid" data-src="holder.js/100px250" />
                     <ul class="mdui-list">
-                        <li class="mdui-list-item mdui-ripple ">
+                        <li class="mdui-list-item mdui-ripple">
                             <div class="mdui-list-item-avatar mdui-color-blue-50">
                                 <img class="mdui-img-circle" src="https://s1.ax1x.com/2023/07/15/pC5GE0P.png"/>
                             </div>
-                            <div class="mdui-list-item-content">
+                            <div onclick="window.open('./web/web.html')" class="mdui-list-item-content">
                                 <div class="mdui-list-item-title">网络站点</div>
                                 <div class="mdui-list-item-text mdui-list-item-one-line">
                                     <span class="mdui-text-color-theme-text">分享优质网站</span>
+                                
                                 </div>
+                                
                             </div>
+                            
                         </li>
+                        
                         <li class="mdui-divider-inset mdui-m-y-0"></li>
                         <li class="mdui-list-item mdui-ripple">
                             <div class="mdui-list-item-avatar mdui-color-blue-50">
                                 <img src="https://s1.ax1x.com/2023/07/15/pC5GYkT.png" />
                             </div>
-                            <div class="mdui-list-item-content">
+                            <div onclick="window.open('./about.html')" class="mdui-list-item-content">
                                 <div class="mdui-list-item-title">应用程序</div>
                                 <div class="mdui-list-item-text mdui-list-item-one-line">
                                     <span class="mdui-text-color-theme-text">分享优质软件</span>
@@ -135,7 +135,7 @@
                             <div class="mdui-list-item-avatar mdui-color-blue-50">
                                 <img src="https://s1.ax1x.com/2023/07/15/pC5Gs76.png" />
                             </div>
-                            <div class="mdui-list-item-content">
+                            <div onclick="window.open('./about.html')" class="mdui-list-item-content">
                                 <div class="mdui-list-item-title">最近更新</div>
                                 <div class="mdui-list-item-text mdui-list-item-one-line">
                                     <span class="mdui-text-color-theme-text">查看最近更新</span>
@@ -147,7 +147,7 @@
                             <div class="mdui-list-item-avatar mdui-color-blue-50">
                                 <img src="https://s1.ax1x.com/2023/07/15/pC5GDn1.png" />
                             </div>
-                            <div class="mdui-list-item-content">
+                            <div onclick="window.open('./about.html')" class="mdui-list-item-content">
                                 <div class="mdui-list-item-title">当前版本</div>
                                 <div class="mdui-list-item-text mdui-list-item-one-line">
                                     <span class="mdui-text-color-theme-text">查看当前版本</span>
@@ -159,7 +159,7 @@
                             <div class="mdui-list-item-avatar mdui-color-blue-50">
                                 <img src="https://s1.ax1x.com/2023/07/15/pC5Gd1J.png" />
                             </div>
-                            <div class="mdui-list-item-content">
+                            <div onclick="window.open('./about.html')" class="mdui-list-item-content">
                                 <div class="mdui-list-item-title">分享资源</div>
                                 <div class="mdui-list-item-text mdui-list-item-one-line">
                                     <span class="mdui-text-color-theme-text">分享你的资源</span>
@@ -171,7 +171,7 @@
                             <div class="mdui-list-item-avatar mdui-color-blue-50">
                                 <img src="https://s1.ax1x.com/2023/07/15/pC58jw6.png" />
                             </div>
-                            <div class="mdui-list-item-content">
+                            <div onclick="window.open('./about.html')" class="mdui-list-item-content">
                                 <div class="mdui-list-item-title">关于我们</div>
                                 <div class="mdui-list-item-text mdui-list-item-one-line">
                                     <span class="mdui-text-color-theme-text">我的所有信息</span>
