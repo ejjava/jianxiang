@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.search-form {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-input {
+  padding: 5px;
+  width: 300px;
+}
+
+.search-button {
+  padding: 5px 10px;
+  margin-left: 5px;
+}
+
+.bookmark-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bookmark {
+  width: 200px;
+  height: 200px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.add-bookmark {
+  font-size: 50px;
+  color: #aaa;
+}
+
+.bookmark-label {
+  margin-top: 10px;
+}

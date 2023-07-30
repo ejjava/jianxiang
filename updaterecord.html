@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>网站更新记录</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/mdui/0.4.2/css/mdui.min.css">
+  <script src="https://cdn.staticfile.org/mdui/0.4.2/js/mdui.min.js"></script>
+  <style>
+    /* 添加自定义样式 */
+    .update-log-container {
+      margin: 20px;
+    }
+    
+    .mdui-card {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="update-log-container" id="update-log"></div>
+
+  <script>
+    var updateLogData = [
+      {
+        title: "版本1.0.0.0",
+        date: "2023-07-5",
+        content: "第一个版本发布<br>包括基本功能和界面设计"
+      },
+      {
+        title: "版本1.0.0.1",
+        date: "2023-07-15",
+        content: "新增功能:启动通知<br>新增网页:小霸王｜写真圣地"
+      }
+      
+      // 可以添加更多的更新记录
+    ];
+var newUpdate = {
+  title: "版本1.0.0.2",
+  date: "2023-07-25",
+  content: "优化功能:启动通知满屏BUG<br>新增网页:CCTV｜次元壁纸｜果子排行榜"
+  
+};
+updateLogData.push(newUpdate);
+
+var newUpdate = {
+  title: "版本1.0.0.3",
+  date: "2023-07-30",
+  content: "新增功能:更新记录｜网站介绍<br>优化功能:一言可查看详情｜右下角通知<br>新增网页:阿巴ing的博客｜MT浏览器｜GTP机器人"
+};
+
+updateLogData.push(newUpdate);
+    function generateUpdateLog() {
+      var updateLogContainer = document.getElementById("update-log");
+
+      for (var i = 0; i < updateLogData.length; i++) {
+        var cardHtml = `
+          <div class="mdui-card">
+            <div class="mdui-card-primary">
+              <div class="mdui-card-primary-title">${updateLogData[i].title}</div>
+              <div class="mdui-card-primary-subtitle">${updateLogData[i].date}</div>
+            </div>
+            <div class="mdui-card-content">
+              ${updateLogData[i].content}
+            </div>
+          </div>
+        `;
+
+        updateLogContainer.innerHTML += cardHtml;
+      }
+    }
+
+    generateUpdateLog();
+  </script>
+</body>
+</html>
+.

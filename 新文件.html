@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一言功能</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .quote {
+            font-size: 20px;
+            margin-bottom: 10px;
+			cursor: pointer;
+			text-decoration: underline;
+        }
+
+        .refresh-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            visibility: hidden;
+        }
+
+        .modal {
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .quote-modal {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .author-modal {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>一言功能</h1>
+        <p class="quote" id="quote"></p>
+        <button class="refresh-btn" id="refreshBtn">刷新</button>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <p class="quote-modal" id="quoteModal"></p>
+            <p class="author-modal" id="authorModal"></p>
+            <button class="close-btn" id="closeBtn">关闭</button>
+        </div>
+    </div>
+
+    <script>
+        var quoteContainer = document.getElementById("quote");
+        var refreshBtn = document.getElementById("refreshBtn");
+        var modalOverlay = document.getElementById("modalOverlay");
+        var quoteModal = document.getElementById("quoteModal");
+        var authorModal = document.getElementById("authorModal");
+
+        function getRandomSentence() {
+            jinrishici.load(function (result) {
+                quoteContainer.innerText = result.data.content;
+            });
+        }
+
+        refreshBtn.onclick = function () {
+            getRandomSentence();
+        };
+
+        quoteContainer.onclick = function () {
+            jinrishici.load(function (result) {
+                quoteModal.innerText = result.data.content;
+                authorModal.innerText = "作者：" + result.data.origin.author;
+                modalOverlay.style.visibility = "visible";
+            });
+        };
+
+        closeBtn.onclick = function () {
+            modalOverlay.style.visibility = "hidden";
+        };
+
+        getRandomSentence();
+    </script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"></script>
+</body>
+</html>

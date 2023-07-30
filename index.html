@@ -2,12 +2,15 @@
 <html lang="zh-cmn-Hans">
 
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
     <meta name="renderer" content="webkit" />
     <meta name="force-rendering" content="webkit" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <script src="js/home.js"></script>
+    <!-- 一言-->
+    <link rel="stylesheet" href="css/yiyan.css" />
     <!-- MDUI CSS -->
     <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
@@ -15,11 +18,38 @@
     <link rel="shortcut icon" href="favicon.ico">
     <meta name="Description" content="简箱，一个网页与资源的分享站，致力于收集好网页与资源。" />
     <meta name="Keywords" content="资源,工具,网页,简箱,分享" />
+      <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #update-notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ffffff;
+      color: #333333;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 20px;
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform: translateX(100%);
+      z-index: 9999;
+    }
+
+    @media only screen and (max-width: 600px) {
+      #update-notification {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="mdui-appbar mdui-shadow-0">
+    <div class="mdui-appbar mdui-shadow-0 mdui-appbar-scroll-hide mdui-appbar-fixed">
         <div class="mdui-toolbar">
             <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#left-drawer'}">
                 <i class="mdui-icon material-icons">menu</i>
@@ -32,17 +62,18 @@
             <a href="javascript:window.open('https://jianxiang.pages.dev/');" class="mdui-btn mdui-btn-icon">
                 <i class="mdui-icon material-icons">refresh</i>
             </a>
-            <a href="javascript:mdui.alert('QQ:914933408<br>版本:1.0.0.2','关于');" class="mdui-btn mdui-btn-icon">
+            <a href="javascript:mdui.alert('QQ:914933408<br>版本:1.0.0.3','关于');" class="mdui-btn mdui-btn-icon">
             
                 <i class="mdui-icon material-icons">more_vert</i>
             </a>
         </div>
     </div>
-    <h1 style="text-decoration: underline"><a href="https://ejjava.github.io" rel="home">JIANXIANG.PAGES.DEV</a></h1>
+    
+    
 
     <div class="mdui-drawer" id="left-drawer">
         
-        <img class="mdui-img-fluid" src="https://s1.ax1x.com/2023/07/15/pC58Cq0.png" />
+        <img class="mdui-img-fluid" src="https://api.zxki.cn/api/ipqm" />
         <ul class="mdui-list">
             <li class="mdui-list-item mdui-ripple">
                 <i class="mdui-list-item-icon mdui-icon material-icons">move_to_inbox</i>
@@ -67,10 +98,14 @@
             </li>
            
         </ul>
-      
+          <p id="jinrishici-sentence">正在加载今日诗词....</p>
+                <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+                
+                
     </div>
-
-
+    <br><br><br>
+    <h1 style="text-decoration: underline"><a href="https://ejjava.github.io" rel="home">JIANXIANG.PAGES.DEV</a></h1>
+<br>
     <div id="content" style="background-color:#ffffff;height:100%;width:100%;float:left;">
         <div class="mdui-container">
             <div class="mdui-card mdui-hoverable">
@@ -89,9 +124,21 @@
                 </div>
                 <h2 href="#">HOME</h2>
                 <img class="mdui-img-fluid" src="https://s1.ax1x.com/2023/07/15/pC58Cq0.png" />
-                <h3 id="jinrishici-sentence">正在加载今日诗词....</h3>
-                <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-            </div>
+              <div class="container">
+       
+        <p class="quote" id="quote"></p>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <p class="quote-modal" id="quoteModal"></p>
+            <p class="author-modal" id="authorModal"></p>
+            <button class="close-btn" id="closeBtn">关闭</button>
+        </div>
+    </div>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"></script>
+    
         </div>
 
         <br>
@@ -135,10 +182,10 @@
                             <div class="mdui-list-item-avatar mdui-color-blue-50">
                                 <img src="https://s1.ax1x.com/2023/07/15/pC5Gs76.png" />
                             </div>
-                            <div onclick="window.open('./about.html')" class="mdui-list-item-content">
-                                <div class="mdui-list-item-title">最近更新</div>
+                            <div onclick="window.open('./updaterecord.html')" class="mdui-list-item-content">
+                                <div class="mdui-list-item-title">更新记录</div>
                                 <div class="mdui-list-item-text mdui-list-item-one-line">
-                                    <span class="mdui-text-color-theme-text">查看最近更新</span>
+                                    <span class="mdui-text-color-theme-text">查看更新记录</span>
                                 </div>
                             </div>
                         </li>
@@ -171,7 +218,7 @@
                             <div class="mdui-list-item-avatar mdui-color-blue-50">
                                 <img src="https://s1.ax1x.com/2023/07/15/pC58jw6.png" />
                             </div>
-                            <div onclick="window.open('./about.html')" class="mdui-list-item-content">
+                            <div onclick="window.open('./introduction.html')" class="mdui-list-item-content">
                                 <div class="mdui-list-item-title">关于我们</div>
                                 <div class="mdui-list-item-text mdui-list-item-one-line">
                                     <span class="mdui-text-color-theme-text">我的所有信息</span>
@@ -182,56 +229,37 @@
                 </div>
             </div>
         </div>
+ <div id="update-notification" class="mdui-card mdui-shadow-5">
+    <div class="mdui-card-content">
+ 2023.7.30<br>  新增功能:更新记录｜网站介绍<br>优化功能:一言可查看详情｜右下角通知<br>新增网页:阿巴ing的博客｜MT浏览器｜GTP机器人<br>(由于应用区在建设目前放在网页区)
+    </div>
+  </div>
 
 
+  <script>
+    window.addEventListener('load', function() {
+      var updateNotification = document.getElementById('update-notification');
 
+      // 模拟每次启动都有更新
+      var hasUpdate = true;
 
-<div class="web_notice" style="
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.3);
-    z-index: 99999;
-">
-<div style="
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 380px;
-    background: #FFF;
-    transform: translate(-50%, -50%);
-    border-radius: 40px;
-    padding: 50px 40px;
-">
-<h3 style="
-    font-weight: bold;
-    text-align: center;
-    font-size: 25px;
-">网站通知</h3>
-<div style="
-    font-size: 12px;
-    margin-top: 26px;
-    line-height: 20px;
-    color: #999;
-">2023.7.25<br>修复功能 启动通知满屏BUG<br>新增功能 暂无~<br>新增网页 CCTV官网｜次元壁纸｜果子排行榜~<br>当前版本 1.0.0.2<br><a href="./course.html">点我查看</a></div><a style="
-    display: block;
-    background: #98a3ff;
-    color: #FFF;
-    text-align: center;
-    font-weight: bold;
-    font-size: 19px;
-    line-height: 60px;
-    margin: 0 auto;
-    margin-top: 45px;
-    border-radius: 32px;
-    width: 80%;
-" onclick="javascript:document.querySelector('.web_notice').remove()">OK</ a>
-</div>
-</div>
+      if (hasUpdate) {
+        updateNotification.style.transform = 'translateX(0)';
+        updateNotification.style.opacity = '1';
+        setTimeout(function() {
+          updateNotification.style.transform = 'translateX(100%)';
+          updateNotification.style.opacity = '0';
+        }, 3000); // 过3秒后自动隐藏
+      }
 
-
+      updateNotification.addEventListener('click', function() {
+        // 处理更新逻辑
+        alert('Updating...');
+      });
+    });
+  </script>
+<!-- 一言 -->
+<script src="js/yiyan.js"></script>
         <!-- MDUI JavaScript -->
         <script src="js/home.js"></script>
         <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
