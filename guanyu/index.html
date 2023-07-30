@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 引入MDUI的CSS文件 -->
+  <link rel="stylesheet" href="path/to/mdui.min.css">
+  <title>网站简介</title>
+  <style>
+    /* 自定义样式 */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 0.5s ease-in-out;
+    }
+    
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      line-height: 1.6;
+      color: #666;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .list-item:before {
+      display: inline-block;
+      content: '➤';
+      margin-right: 5px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #2196f3;
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #1976d2;
+    }
+    
+    .share-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .share-button {
+      margin: 0 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .share-button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container mdui-shadow-3">
+    <h1 class="mdui-text-color-theme">欢迎访问简箱</h1>
+    <p>这是简箱网站的简介。</p>
+    <p>一下是简箱的一些介绍:</p>
+    <ul>
+      <li class="list-item">精美的界面设计</li>
+      <li class="list-item">交互式动画效果</li>
+      <li class="list-item">良好的用户体验</li>
+      <li class="list-item">简箱成立于2023，励志要成为一个小有名气的资源发现网站！不过有点难实现呀！但是，我也在努力啊！总有一天，我会完成我的目标的!你也要向着目标努力前进。一起加油吧</li>
+    </ul>
+    <p>无论你是谁，都能在简箱上找到感兴趣的内容。快来探索吧！（网址:https://jianxiang.pages.dev/）</p>
+    <div class="share-buttons">
+      <span class="button" onclick="shareToQQ()">分享到 QQ</span>
+    </div>
+  </div>
+
+  <!-- 引入MDUI的JS文件 -->
+  <script src="path/to/mdui.min.js"></script>
+  
+  <script>
+    function shareToQQ() {
+      // 分享的标题
+      var title = "简箱";
+      // 分享的描述
+      var desc = "一个超级好用的收录网站";
+      // 分享的链接
+      var url = window.location.href;
+      // 分享的图标
+      var imgUrl = "https://jianxiang.pages.dev/favicon.ico";
+
+      // 构造QQ分享链接
+      var shareUrl = "https://connect.qq.com/widget/shareqq/index.html?url=" + encodeURIComponent(url) + "&title=" + encodeURIComponent(title) +"&desc=" + encodeURIComponent(desc) + "&pics=" + encodeURIComponent(imgUrl);
+
+      // 在新窗口中打开QQ分享链接
+      window.open(shareUrl);
+    }
+  </script>
+</body>
+</html>
